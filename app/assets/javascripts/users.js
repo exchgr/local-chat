@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  if($(".users.new").length > 0){
+
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(successFunction);
 	}
@@ -9,11 +11,11 @@ $(document).ready(function(){
         $("#user__lat").val(lat);
 		$("#user__long").val(longitude);
 
-		alert(lat+ ", " + longitude);
+		//alert(lat+ ", " + longitude);
 
 	}
    
-
+  }
 
 	
 });
