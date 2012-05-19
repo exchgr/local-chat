@@ -8,6 +8,10 @@ development:
   database: localchat-development
   pool: 5
   timeout: 5000
+  encoding: unicode
+  username: postgres
+  host: localhost
+  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,3 +27,7 @@ production:
   database: localchat-production
   pool: 5
   timeout: 5000
+  encoding: unicode
+  username: postgres
+  host: localhost
+  port: 5432
