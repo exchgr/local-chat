@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  chatroom_id: 1
   lat: 1.5
   long: 1.5
+  chatroom_id: 1
   radius: 1
 
 two:
   name: MyString
-  chatroom_id: 1
   lat: 1.5
   long: 1.5
+  chatroom_id: 1
   radius: 1
