@@ -9,12 +9,12 @@
   .field
     = f.label :name
     = f.text_field :name
-  
   .field
-    = f.hidden_field :_lat
-    
-    
-    
+    = f.label :lat
+    = f.text_field :lat
+  .field
+    = f.label :long
+    = f.text_field :long
   .field
     = f.label :chatroom_id
     = f.number_field :chatroom_id
