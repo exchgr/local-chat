@@ -1,3 +1,9 @@
 Gemfile.lock 
+log/
 log/*
 *.swp
+*.DS_Store
+public/assets/
+public/assets/*
+tmp/
+tmp/*
