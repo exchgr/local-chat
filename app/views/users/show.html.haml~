@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Lat:
+  = @user.lat
+%p
+  %b Long:
+  = @user.long
+%p
+  %b Chatroom:
+  = @user.chatroom_id
+%p
+  %b Radius:
+  = @user.radius
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
