@@ -12,30 +12,9 @@
         %input.start{:type => 'text', :name => 'search', :value => 'Search', :autocomplete => 'off'}
       %div.mousescroll#chatrooms
         %ul
-          %li
-            %h3 No Shoebies Allowed
-            %p 4 users
-          %li
-            %h3 nastyfest
-            %p 5 users
-          %li
-            %h3 a chatroom lol
-            %p 6 users
-          %li
-            %h3 No Shoebies Allowed
-            %p 4 users
-          %li
-            %h3 nastyfest
-            %p 5 users
-          %li
-            %h3 a chatroom lol
-            %p 6 users
-          %li
-            %h3 No Shoebies Allowed
-            %p 4 users
-          %li
-            %h3 nastyfest
-            %p 5 users
-          %li
-            %h3 a chatroom lol
-            %p 6 users
+          - @chatrooms.each do |chatroom|
+            %li
+              %h3 = chatroom.name
+              %p 
+                = chatroom.users.count
+                users

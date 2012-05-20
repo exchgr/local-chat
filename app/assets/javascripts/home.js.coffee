@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready () ->
+    jQuery.expr[":"].Contains = (a, i, m) ->
+        (a.textContent or a.innerText or "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0
     $('input[name="search"]').focus(() ->
         if $(this).val() == 'Search'
             $(this).removeClass('start')
@@ -14,8 +16,8 @@ $(document).ready () ->
     ).keyup(() ->
         filter = $(this).val()
         if filter
-            $('#chatrooms ul').find('h3:not(:contains(' + filter + '))').parent().slideUp(250)
-            $('#chatrooms ul').find('h3:contains(' + filter + ')').parent().slideDown(250)
+            $('#chatrooms ul').find('h3:not(:Contains(' + filter + '))').parent().slideUp(250)
+            $('#chatrooms ul').find('h3:Contains(' + filter + ')').parent().slideDown(250)
         else
             $('#chatrooms ul').find('li').slideDown(250)
     )
@@ -24,6 +26,6 @@ $(document).ready () ->
         color: '#333',
         size: '5px',
         width: '300px',
-        height: '461px'
+        height: '460px'
     }
 
