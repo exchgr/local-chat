@@ -28,7 +28,7 @@
 #list {
     width: 300px;
     background: #aaa;
-    color: #fff;
+    color: #333;
 
     form {
         input[type='text'] {
@@ -49,19 +49,25 @@
         }
     }
 
-    ul {
+    ul, form.search {
         list-style: none;
         margin: 0px;
         padding: 0px;
         border-top: 1px solid #999;
 
-        li {
+        li, form.search {
             list-style: none;
             padding: 10px;
             border-bottom: 1px solid #999;
+            background: -webkit-linear-gradient(bottom, #aaa 0%, #ddd 100%);
+            text-shadow: 0px 1px 0px #eee;
 
             &:hover {
-                background: #ccc;
+                background: -webkit-linear-gradient(bottom, #bbb 0%, #eee 100%);
+            }
+
+            &.new, &.new:hover {
+                background: transparent;
             }
 
             h3, p {
@@ -73,5 +79,5 @@
 
 #sidebar_ad_slot {
     width: 630px;
-    margin: 0px auto;
+    margin: 20px auto;
 }

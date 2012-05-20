@@ -16,17 +16,23 @@
 
 %input{type: "hidden", id: "chatroom_number", value: "#{@chatroom.id}"}
 %input{type: "hidden", id: "user_id", value: "#{@user.id}"}
+%input{type: "hidden", id: "chatroom_message_count", value: "#{@chatroom.messages.count}"}
 
 %div#page-wrap
   %h2 Chatroom
   %p#name-position
   %div#chat-wrap
     %div#chat-area
+      - @messages.each do |message|
+        %p
+          %span= "#{message.user.name}:"
+          =message.message
   
 %form#send-message-area
   %p
     Your Message:
   %textarea{id: "sender", maxlength: "200"}
+  %button{id: "send_message"}="Send Message"
   
   
 = link_to 'Edit', edit_chatroom_path(@chatroom)
