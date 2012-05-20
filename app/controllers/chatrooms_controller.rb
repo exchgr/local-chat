@@ -15,6 +15,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     @chatroom = Chatroom.find(params[:id])
+    @messages = @chatroom.messages.order("created_at DESC")
     @user = User.find(session[:user_id])
     respond_to do |format|
       format.html # show.html.erb
@@ -45,7 +46,6 @@ class ChatroomsController < ApplicationController
     
     @chatroom = Chatroom.new(params[:chatroom])
     
-
     respond_to do |format|
       if @chatroom.save
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
@@ -86,10 +86,19 @@ class ChatroomsController < ApplicationController
   end
   
   def ajax_update
-  	  @chatroom = Chatroom.find(params[:id])
-  	  message = params[:message]
+  	  chatroom = Chatroom.find(params[:id])
+  	  message = chatroom.messages.order("created_at DESC").first
+  	  user = message.user
+  	  count = chatroom.messages.count
+  	  render :json => {message: message.message, count: count, username: user.name}
+  end
+  
+  def ajax_send_message
+  	  chatroom = Chatroom.find(params[:id])
+  	  message_text = params[:message]
   	  user_id = params[:user_id]
-  	  render :json => {message: message, user_id: user_id}
+	  chatroom.messages.create(message: message_text, user_id: user_id)
+	  render :json => {message: "success"}
   end
   
 end
