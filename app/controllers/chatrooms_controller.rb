@@ -15,7 +15,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     @chatroom = Chatroom.find(params[:id])
-    @messages = @chatroom.messages.order("created_at DESC")
+    @messages = @chatroom.messages.order("created_at ASC")
     @user = User.find(session[:user_id])
 
     respond_to do |format|
