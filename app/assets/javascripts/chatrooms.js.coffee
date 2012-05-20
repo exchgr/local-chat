@@ -30,6 +30,13 @@ $(document).ready () ->
         height: '460px'
     }
 
+    $('.mousescroll-messages').slimscroll({
+        color: '#333',
+        size: '5px',
+        width: '600px',
+        height: '415px'
+    }).scrollTop 202020202020
+
 #    new CityGrid.Ads 'sidebar_ad_slot', {
 #        collection_id: 'web-001-630x100',
 #        publisher: 'citysearch',
