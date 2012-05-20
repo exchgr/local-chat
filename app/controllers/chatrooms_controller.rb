@@ -25,7 +25,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/new.json
   def new
     @chatroom = Chatroom.new
-    
+    @user = User.find(session[:user_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,9 @@ class ChatroomsController < ApplicationController
   # POST /chatrooms
   # POST /chatrooms.json
   def create
+    
     @chatroom = Chatroom.new(params[:chatroom])
+    
 
     respond_to do |format|
       if @chatroom.save

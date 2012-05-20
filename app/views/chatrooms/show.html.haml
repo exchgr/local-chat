@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @chatroom.number
+%p
+  %b Lat:
+  = @chatroom.lat
+%p
+  %b Long:
+  = @chatroom.long
+
+= link_to 'Edit', edit_chatroom_path(@chatroom)
+\|
+= link_to 'Back', chatrooms_path

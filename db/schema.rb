@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519214216) do
+ActiveRecord::Schema.define(:version => 20120519234946) do
 
   create_table "chatrooms", :force => true do |t|
-    t.integer  "roomnumber"
+    t.integer  "number"
     t.float    "lat"
     t.float    "long"
     t.string   "name"

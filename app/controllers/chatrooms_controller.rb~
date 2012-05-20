@@ -25,6 +25,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/new.json
   def new
     @chatroom = Chatroom.new
+    
 
     respond_to do |format|
       format.html # new.html.erb
