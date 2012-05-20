@@ -1,3 +1,73 @@
 // Place all the styles related to the Chatrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map, #list {
+    float: left;
+    height: 500px;
+}
+
+#map {
+    width: 600px;
+    background: #37B035;
+
+    h2 {
+        margin: 20px;
+    }
+}
+
+.mousescroll {
+    height: 500px - 39px;
+    overflow: hidden;
+
+    &:hover {
+        overflow-y: scroll;
+    }
+}
+
+#list {
+    width: 300px;
+    background: #aaa;
+    color: #fff;
+
+    form {
+        input[type='text'] {
+            font-family: FreeSans, 'Nimbus Sans L', Helvetica, Arial, sans-serif;
+            border: 0px solid;
+            border-radius: 20px;
+            padding: 5px 10px;
+            width: 300px - 30px;
+            margin: 5px;
+            
+            &:focus {
+                outline: none;
+            }
+
+            &.start {
+                color: #999;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        border-top: 1px solid #999;
+
+        li {
+            list-style: none;
+            padding: 10px;
+            border-bottom: 1px solid #999;
+
+            &:hover {
+                background: #ccc;
+            }
+
+            h3, p {
+                margin: 0px;
+            }
+        }
+    }
+}
+
