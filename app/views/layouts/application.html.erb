@@ -3,6 +3,8 @@
 <head>
   <title>LocalChat</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    controller.controller_name, :media => "all" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Cabin:500,500italic", :media => "screen" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
