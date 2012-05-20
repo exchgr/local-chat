@@ -1,4 +1,41 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
-
-= link_to "Create User", users_path
+/= link_to "Create User", users_path
+= javascript_include_tag 'slimscroll'
+%header
+  .wrap 
+    %h1 LocalChat
+.wrap
+  .chats
+    #map
+      %h2 Chats in your area
+    #list
+      %form.search
+        %input.start{:type => 'text', :name => 'search', :value => 'Search', :autocomplete => 'off'}
+      %div.mousescroll#chatrooms
+        %ul
+          %li
+            %h3 No Shoebies Allowed
+            %p 4 users
+          %li
+            %h3 nastyfest
+            %p 5 users
+          %li
+            %h3 a chatroom lol
+            %p 6 users
+          %li
+            %h3 No Shoebies Allowed
+            %p 4 users
+          %li
+            %h3 nastyfest
+            %p 5 users
+          %li
+            %h3 a chatroom lol
+            %p 6 users
+          %li
+            %h3 No Shoebies Allowed
+            %p 4 users
+          %li
+            %h3 nastyfest
+            %p 5 users
+          %li
+            %h3 a chatroom lol
+            %p 6 users
