@@ -11,7 +11,7 @@
       %div.mousescroll#chatrooms
         %ul
           %li.new{:style => 'text-align: center;'}
-            %h3= link_to "New Chatroom", new_chatroom_path, :class => "button"
+            %strong= link_to "New Chatroom", new_chatroom_path, :class => "button"
           - @chatrooms.each do |chatroom|
             %li
               %h3= chatroom.name
