@@ -6,11 +6,16 @@
   <%= stylesheet_link_tag    controller.controller_name, :media => "all" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Cabin:500,500italic", :media => "screen" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag controller.controller_name %>
+  <%= javascript_include_tag "slimscroll" %>
+  <%= javascript_include_tag "http://static.citygridmedia.com/ads/scripts/v2/loader.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body class = "<%= className %>">
  
 <%= yield %>
-
+<div class="wrap">
+  <div id="sidebar_ad_slot"></div>
+</div>
 </body>
 </html>

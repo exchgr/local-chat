@@ -5,6 +5,7 @@
 $(document).ready () ->
     jQuery.expr[":"].Contains = (a, i, m) ->
         (a.textContent or a.innerText or "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0
+
     $('input[name="search"]').focus(() ->
         if $(this).val() == 'Search'
             $(this).removeClass('start')
@@ -29,3 +30,12 @@ $(document).ready () ->
         height: '460px'
     }
 
+    new CityGrid.Ads 'sidebar_ad_slot', {
+        collection_id: 'web-001-630x100',
+        publisher: 'citysearch',
+        what: 'sushi',
+        lat: 34.088188,
+        lon: -118.37205,
+        width: 630,
+        height: 100
+    }
