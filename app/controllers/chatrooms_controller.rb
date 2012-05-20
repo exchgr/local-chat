@@ -1,4 +1,6 @@
 class ChatroomsController < ApplicationController
+	skip_before_filter :removeUserChatroom, :except => [:index, :new, :edit, :create]
+	
   # GET /chatrooms
   # GET /chatrooms.json
   def index
@@ -17,7 +19,10 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @messages = @chatroom.messages.order("created_at ASC")
     @user = User.find(session[:user_id])
-
+    
+    @user.chatroom_id = @chatroom.id
+    @user.save
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @chatroom }
