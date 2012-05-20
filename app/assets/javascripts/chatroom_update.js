@@ -5,6 +5,7 @@ $(document).ready(function() {
 		$("#send_message").click(function(e){
 			e.preventDefault();
 			sendMessage();
+            return false;
 		});
 	}
 	
