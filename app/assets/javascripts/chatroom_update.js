@@ -5,7 +5,7 @@ $(document).ready(function() {
 		$("#send_message").click(function(e){
 			e.preventDefault();
 			sendMessage();
-            return false;
+			return false;
 		});
 	}
 	
@@ -15,12 +15,18 @@ $(document).ready(function() {
 		var chatroom_number = $("input#chatroom_number").val();
 		
 		$.getJSON("/chatrooms/"+chatroom_number+"/ajax_update", function(data) {
-			if (data.count > count) {
-				$("#chat-area").append("<p><span>"+data.username+"</span>: "+data.message+"</p>");
-				console.log(data.message);
+			if (data.blank) { 
+				console.log("empty");
+			} else {
+				if (data.count > count) {
+					$("#chat-area").append("<p><span>"+data.username+"</span>: "+data.message+"</p>");
+					console.log(data.message);
+				}
+				count = data.count
 			}
-			count = data.count
+			
 			setTimeout(updateChatroom, 1000);
+				
 		});		
 	}
 	

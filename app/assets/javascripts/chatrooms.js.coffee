@@ -30,12 +30,12 @@ $(document).ready () ->
         height: '460px'
     }
 
-    new CityGrid.Ads 'sidebar_ad_slot', {
-        collection_id: 'web-001-630x100',
-        publisher: 'citysearch',
-        what: 'sushi',
-        lat: 34.088188,
-        lon: -118.37205,
-        width: 630,
-        height: 100
-    }
+#    new CityGrid.Ads 'sidebar_ad_slot', {
+#        collection_id: 'web-001-630x100',
+#        publisher: 'citysearch',
+#        what: 'sushi',
+#        lat: 34.088188,
+#        lon: -118.37205,
+#        width: 630,
+#        height: 100
+#    }

@@ -17,6 +17,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @messages = @chatroom.messages.order("created_at DESC")
     @user = User.find(session[:user_id])
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @chatroom }
@@ -87,10 +88,15 @@ class ChatroomsController < ApplicationController
   
   def ajax_update
   	  chatroom = Chatroom.find(params[:id])
-  	  message = chatroom.messages.order("created_at DESC").first
-  	  user = message.user
-  	  count = chatroom.messages.count
-  	  render :json => {message: message.message, count: count, username: user.name}
+  	  
+  	  if chatroom.messages.empty?
+  	  	  render :json => {blank: 1}
+  	  else
+		  message = chatroom.messages.order("created_at DESC").first
+		  user = message.user
+		  count = chatroom.messages.count
+		  render :json => {message: message.message, count: count, username: user.name}
+  	  end
   end
   
   def ajax_send_message
