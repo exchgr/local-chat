@@ -38,12 +38,13 @@ $(document).ready(function() {
 		var chatroom_number = $("input#chatroom_number").val();
 		
 		$.getJSON("/chatrooms/"+chatroom_number+"/ajax_update_users", function(data) {
-			if (data.count > user_count) {
+			if (data.count != user_count) {
 				console.log(data.user);
+                $('.mousescroll-users').append('<div id="user"><p><strong>' + data.user + '</strong></p>');
 			}
 			user_count = data.count
 			
-			setTimeout(updateChatroom, 1000);	
+			setTimeout(updateChatroomUsers, 1000);	
 		});		
 		
 	}

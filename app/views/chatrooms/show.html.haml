@@ -10,6 +10,13 @@
             =message.message
     %form
       %input{:type => 'text'}
+  #userlist
+    .mousescroll-users
+      - @chatroom.users.each do |user|
+        .user
+          %p
+            %strong= user.name
+
 /%p
 /  %b Lat:
 /  = @chatroom.lat
