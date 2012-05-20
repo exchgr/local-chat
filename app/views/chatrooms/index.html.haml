@@ -14,7 +14,7 @@
             %strong= link_to "New Chatroom", new_chatroom_path, :class => "button"
           - @chatrooms.each do |chatroom|
             %li
-              %h3= chatroom.name
+              %h3= link_to chatroom.name, chatroom_path(chatroom)
               %p 
                 = chatroom.users.count
                 users
