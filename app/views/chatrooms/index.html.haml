@@ -1,0 +1,27 @@
+%h1 Listing chatrooms
+
+= @user.inspect
+
+%table
+  %tr
+    %th Name
+    %th Lat
+    %th Long
+    %th Radius
+    %th
+    %th
+    %th
+
+  - @chatrooms.each do |chatroom|
+    %tr
+      %td= chatroom.name
+      %td= chatroom.lat
+      %td= chatroom.long
+      %td= chatroom.radius
+      %td= link_to 'Show', chatroom
+      %td= link_to 'Edit', edit_chatroom_path(chatroom)
+      %td= link_to 'Destroy', chatroom, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Chatroom', new_chatroom_path

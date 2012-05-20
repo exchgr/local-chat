@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519214216) do
+ActiveRecord::Schema.define(:version => 20120520014347) do
 
   create_table "chatrooms", :force => true do |t|
-    t.integer  "roomnumber"
+    t.integer  "number"
     t.float    "lat"
     t.float    "long"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "radius"
   end
 
   create_table "messages", :force => true do |t|
