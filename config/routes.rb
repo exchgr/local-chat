@@ -8,6 +8,7 @@ LocalChat::Application.routes.draw do
   
   match "/chatrooms/:id/ajax_update", :to => "chatrooms#ajax_update"
   match "/chatrooms/:id/ajax_send_message", :to => "chatrooms#ajax_send_message"
+  match "/chatrooms/:id/ajax_update_users", :to => "chatrooms#ajax_update_users"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

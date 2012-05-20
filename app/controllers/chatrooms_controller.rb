@@ -17,7 +17,9 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     @chatroom = Chatroom.find(params[:id])
-    @messages = @chatroom.messages.order("created_at ASC")
+    @messages = @chatroom.messages.order("created_at DESC").limit(500).sort! { |a, b|
+    	    a.created_at <=> b.created_at
+    }
     @user = User.find(session[:user_id])
     
     @user.chatroom_id = @chatroom.id
@@ -110,6 +112,14 @@ class ChatroomsController < ApplicationController
   	  user_id = params[:user_id]
 	  chatroom.messages.create(message: message_text, user_id: user_id)
 	  render :json => {message: "success"}
+  end
+  
+  def ajax_update_users 
+  	  chatroom = Chatroom.find(params[:id])
+  	  user = chatroom.users.order("created_at DESC").first
+  	  count = chatroom.users.count
+
+  	  render :json => {user: user, count: count}
   end
   
 end

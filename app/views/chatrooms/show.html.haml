@@ -18,6 +18,7 @@
 %input{type: "hidden", id: "chatroom_number", value: "#{@chatroom.id}"}
 %input{type: "hidden", id: "user_id", value: "#{@user.id}"}
 %input{type: "hidden", id: "chatroom_message_count", value: "#{@chatroom.messages.count}"}
+%input{type: "hidden", id: "chatroom_user_count", value: "#{@chatroom.users.count}"}
 
 %div#page-wrap
   %h2 Chatroom
