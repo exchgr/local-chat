@@ -12,7 +12,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body class = "<%= className %>">
- 
+  <header>
+    <div id="wrap">
+      <h1><a href="/">LocalChat</a></h1>
+    </div>
+  </header>
 <%= yield %>
 <div class="wrap">
   <div id="sidebar_ad_slot"></div>

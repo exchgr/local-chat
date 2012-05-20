@@ -17,7 +17,7 @@
 }
 
 .mousescroll {
-    height: 500px - 39px;
+    //height: 500px - 39px;
     overflow: hidden;
 
     &:hover {
@@ -75,8 +75,64 @@
             h3, p {
                 margin: 0px;
             }
+            
+            a {
+                color: #333;
+                text-decoration: none;
+            }
         }
     }
+}
+
+#messages, #chatmap, #userlist {
+    float: left;
+}
+
+#messages {
+    width: 600px;
+    background: #eee;
+    color: #333;
+    text-shadow: 0px 1px 0px #fff;
+    height: 500px;
+    position: relative;
+
+    h2 {
+        margin: 10px;
+    }
+
+    .message {
+        background: -webkit-linear-gradient(bottom, #ddd 0%, #eee 100%);
+
+        p {
+            margin: 10px;
+        }
+    }
+    form {
+        position: absolute;
+        bottom: 0px;
+        background: -webkit-linear-gradient(bottom, #aaa 0%, #ddd 100%);
+
+        input[type='text'] {
+            font-family: FreeSans, 'Nimbus Sans L', Helvetica, Arial, sans-serif;
+            border: 0px solid;
+            border-radius: 20px;
+            padding: 5px 10px;
+            width: 600px - 30px;
+            margin: 5px;
+            
+            &:focus {
+                outline: none;
+            }
+
+            &.start {
+                color: #999;
+            }
+        }
+    }
+}
+
+#chatmap, #userlist {
+    width: 300px;
 }
 
 #sidebar_ad_slot {

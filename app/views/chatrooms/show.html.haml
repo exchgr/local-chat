@@ -1,41 +1,30 @@
 = javascript_include_tag "chatroom_update"
-%p#notice= notice
-
-%p
-  %b Name
-  = @chatroom.name
-%p
-  %b Lat:
-  = @chatroom.lat
-%p
-  %b Long:
-  = @chatroom.long
-  
-%p
-  %b Radius:
-  = @chatroom.radius
+.wrap
+  #messages
+    %h2= @chatroom.name
+    .mousescroll-messages
+      - @messages.each do |message|
+        .message
+          %p
+            %strong= "#{message.user.name}:"
+            =message.message
+    %form
+      %input{:type => 'text'}
+/%p
+/  %b Lat:
+/  = @chatroom.lat
+/%p
+/  %b Long:
+/  = @chatroom.long
+/  
+/%p
+/  %b Radius:
+/  = @chatroom.radius
 
 %input{type: "hidden", id: "chatroom_number", value: "#{@chatroom.id}"}
 %input{type: "hidden", id: "user_id", value: "#{@user.id}"}
 %input{type: "hidden", id: "chatroom_message_count", value: "#{@chatroom.messages.count}"}
 
-%div#page-wrap
-  %h2 Chatroom
-  %p#name-position
-  %div#chat-wrap
-    %div#chat-area
-      - @messages.each do |message|
-        %p
-          %span= "#{message.user.name}:"
-          =message.message
-  
-%form#send-message-area
-  %p
-    Your Message:
-  %textarea{id: "sender", maxlength: "200"}
-  %button{id: "send_message"}="Send Message"
-  
-  
 = link_to 'Edit', edit_chatroom_path(@chatroom)
 \|
 = link_to 'Back', chatrooms_path
