@@ -15,7 +15,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     @chatroom = Chatroom.find(params[:id])
-
+    @user = User.find(session[:user_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @chatroom }
@@ -84,4 +84,12 @@ class ChatroomsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def ajax_update
+  	  @chatroom = Chatroom.find(params[:id])
+  	  message = params[:message]
+  	  user_id = params[:user_id]
+  	  render :json => {message: message, user_id: user_id}
+  end
+  
 end

@@ -5,6 +5,8 @@ LocalChat::Application.routes.draw do
 
   resources :users, :chatrooms
   root :to => "chatrooms#index"
+  
+  match "/chatrooms/:id/ajax_update", :to => "chatrooms#ajax_update"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
