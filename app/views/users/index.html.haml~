@@ -5,8 +5,6 @@
     %th Name
     %th Lat
     %th Long
-    %th Chatroom
-    %th Radius
     %th
     %th
     %th
@@ -16,8 +14,6 @@
       %td= user.name
       %td= user.lat
       %td= user.long
-      %td= user.chatroom_id
-      %td= user.radius
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete

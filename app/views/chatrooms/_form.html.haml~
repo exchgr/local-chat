@@ -7,13 +7,11 @@
           %li= msg
 
   .field
-    = f.label :number
-    = f.number_field :number
+    = f.label :name
+    = f.text_field :name
   .field
-    = f.label :lat
-    = f.text_field :lat
+    = f.hidden_field :lat, :value => @user.lat
   .field
-    = f.label :long
-    = f.text_field :long
+    = f.hidden_field :long,:value => @user.long
   .actions
     = f.submit 'Save'

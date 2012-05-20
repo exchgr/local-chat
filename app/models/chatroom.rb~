@@ -1,3 +1,13 @@
 class Chatroom < ActiveRecord::Base
-  attr_accessible :lat, :long, :number
+  attr_accessible :lat, :long, :name, :radius
+  
+  has_many :users
+  has_many :messages
+  
+  def findChatrooms(lat, long)
+  	  #for each chatroom
+  	  #if the distance between the chatroom and the user is less than the radius of the chatroom
+  	  #then add it to the the hash
+  	  
+  
 end

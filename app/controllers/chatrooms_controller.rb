@@ -2,8 +2,9 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms
   # GET /chatrooms.json
   def index
+    @user = User.find(session[:user_id])
+    #@chatrooms = Chatroom.findChatrooms(@user.lat, @user.long)
     @chatrooms = Chatroom.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @chatrooms }

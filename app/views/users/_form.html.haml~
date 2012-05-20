@@ -11,14 +11,9 @@
     = f.text_field :name
   
   .field
-    = f.hidden_field :_lat
-    = f.hidden_field :_long
+    = f.hidden_field :lat
+    = f.hidden_field :long
     
-    
-    
-  .field
-    = f.label :chatroom_id
-    = f.number_field :chatroom_id
   .field
     = f.label :radius
     = f.number_field :radius

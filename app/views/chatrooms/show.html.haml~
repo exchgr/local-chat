@@ -9,10 +9,6 @@
 %p
   %b Long:
   = @chatroom.long
-  
-%p
-  %b Radius:
-  = @chatroom.radius
 
 = link_to 'Edit', edit_chatroom_path(@chatroom)
 \|
