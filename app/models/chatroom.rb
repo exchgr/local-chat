@@ -15,18 +15,12 @@ class Chatroom < ActiveRecord::Base
 			  a = chatroom.lat - lat
 			  b = chatroom.long - long
   	  	  
-			  if chatroom.radius <= Math.sqrt(a**2 + b**2)
+			  if (chatroom.radius > Math.sqrt(a**2 + b**2))
 				  chatrooms << chatroom
 			  end
 		  end
   	  end
-  end
-  
-  
-  def findDistance(lat1, long1, lat2, long2)
-  	  a = lat1 - lat2
-  	  b = long1 - long2
-  	  Math.sqrt(a**2 + b**2)
+  	  return chatrooms
   end
   	  
 end
